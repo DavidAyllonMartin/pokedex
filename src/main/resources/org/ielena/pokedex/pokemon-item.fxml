@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ielena.pokedex.controller.PokemonItemController">
+   <HBox fx:id="pokemonCard" onMouseClicked="#click" prefHeight="100.0" prefWidth="300.0" styleClass="pokemon_item" stylesheets="@styles.css">
+      <VBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="10.0">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <Label fx:id="id" text="#001" />
+         <Label fx:id="name" text="Bulbasaur" />
+         <HBox spacing="10.0">
+            <Label fx:id="type1" text="Tipo1" />
+            <Label fx:id="type2" text="Tipo2" />
+         </HBox>
+      </VBox>
+      <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+   </HBox>
+</AnchorPane>
