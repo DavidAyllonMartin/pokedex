@@ -4,34 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57ab8969-04fa-479d-bdf6-9d98e97b7a88" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/Mediator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/MasterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokemonInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PreloaderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/ProgressMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/ImageDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/JsonDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/SceneTransition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/preloader/AppPreloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/img/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/img/pokemon_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokemon-info.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/splash-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="57ab8969-04fa-479d-bdf6-9d98e97b7a88" name="Changes" comment="08/12/2023&#10;Casa">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/utils/ImageDownloader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/Callback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/Mediator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/mediator/Mediator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/PokedexApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/PokedexApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/MasterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokedexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokedexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokemonInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokemonInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokemonItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/PokemonItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/AgregadorPokeAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/controller/ProgressMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/preloader/notification/ProgressMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/ColorAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/utils/ColorAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/ImageDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/JsonDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/utils/JsonDownloader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokedex-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokedex-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokemon-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokemon-item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/model/SceneTransition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/utils/SceneTransition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/preloader/AppPreloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ielena/pokedex/preloader/AppPreloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokedex-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/views/pokedex-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokemon-info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/views/pokemon-info.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/pokemon-item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/views/pokemon-item.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/splash-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/ielena/pokedex/views/splash-screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -61,34 +55,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_directory_selection": "C:/Users/Deiv/IdeaProjects/pokedex/src/main/java/org/ielena/pokedex",
-    "last_opened_file_path": "D:/Users/Deiv/Downloads/radio-api-json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Deiv/IdeaProjects/pokedex/src/main/java/org/ielena/pokedex&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Deiv/IdeaProjects/pokedex/src/main/resources/org/ielena/pokedex/views&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Deiv\IdeaProjects\pokedex\src\main\java\org\ielena\pokedex" />
@@ -98,14 +92,18 @@
       <recent name="C:\Users\2DAM\IdeaProjects\pokedex\src\main\resources\org\ielena\pokedex" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Deiv\IdeaProjects\pokedex\src\main\resources\org\ielena\pokedex\views" />
       <recent name="C:\Users\Deiv\IdeaProjects\pokedex\src\main\resources\org\ielena\pokedex\img\images\" />
       <recent name="C:\Users\Deiv\IdeaProjects\pokedex\src\main\resources\org\ielena\pokedex" />
       <recent name="C:\Users\Deiv\IdeaProjects\pokedex\src\main\java\org\ielena\pokedex\controller" />
       <recent name="C:\Users\Deiv\IdeaProjects\pokedex\src\main\resources\org\ielena\pokedex\fxml" />
-      <recent name="C:\Users\2DAM\IdeaProjects\pokedex\src\main\resources\org\ielena\pokedex\img\" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="org.ielena.pokedex.controller" />
+      <recent name="org.ielena.pokedex.model.dao" />
+      <recent name="org.ielena.pokedex.model.mediator" />
+      <recent name="org.ielena.pokedex.utils" />
+      <recent name="org.ielena.pokedex.model" />
+      <recent name="org.ielena.pokedex.preloader.notification" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.ielena.pokedex.controller" />
@@ -143,11 +141,25 @@
       <workItem from="1701976469091" duration="3869000" />
       <workItem from="1701980562827" duration="1909000" />
       <workItem from="1701982891898" duration="6615000" />
-      <workItem from="1701999292385" duration="7442000" />
+      <workItem from="1701999292385" duration="7584000" />
+      <workItem from="1702044245122" duration="6316000" />
+      <workItem from="1702059087204" duration="4502000" />
     </task>
+    <task id="LOCAL-00001" summary="08/12/2023&#10;Casa">
+      <created>1702006831129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702006831129</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="08/12/2023&#10;Casa" />
+    <option name="LAST_COMMIT_MESSAGE" value="08/12/2023&#10;Casa" />
   </component>
 </project>

@@ -2,7 +2,7 @@ package org.ielena.pokedex.preloader;
 
 import org.ielena.pokedex.PokedexApplication;
 import org.ielena.pokedex.controller.PreloaderController;
-import org.ielena.pokedex.controller.ProgressMessage;
+import org.ielena.pokedex.preloader.notification.ProgressMessage;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,7 +20,7 @@ public class AppPreloader extends Preloader {
 
         this.preloaderStage = stage;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(PokedexApplication.class.getResource("splash-screen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(PokedexApplication.class.getResource("views/splash-screen.fxml"));
         Scene scene           = new Scene(fxmlLoader.load());
         preloaderController   = fxmlLoader.getController();
 

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefWidth="320.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.ielena.pokedex.controller.PokemonItemController">
-   <HBox fx:id="pokemonCard" onMouseClicked="#click" prefHeight="120.0" styleClass="pokemon_item" stylesheets="@styles.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+   <HBox fx:id="pokemonCard" onMouseClicked="#click1" prefHeight="120.0" styleClass="pokemon_item" stylesheets="@../styles.css" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
       <VBox alignment="CENTER_LEFT" prefWidth="190.0" spacing="10.0">
          <HBox.margin>
             <Insets />
@@ -17,20 +17,20 @@
          <padding>
             <Insets left="20.0" />
          </padding>
-         <Label fx:id="id" styleClass="pokemon_item_label" stylesheets="@styles.css" text="#001">
+         <Label fx:id="id" styleClass="pokemon_item_label" stylesheets="@../styles.css" text="#001">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
-         <Label fx:id="name" styleClass="pokemon_item_label" stylesheets="@styles.css" text="Bulbasaur">
+         <Label fx:id="name" styleClass="pokemon_item_label" stylesheets="@../styles.css" text="Bulbasaur">
             <font>
                <Font name="System Bold" size="16.0" />
             </font></Label>
          <HBox spacing="10.0">
-            <Label fx:id="type1" styleClass="pokemon_item_label" stylesheets="@styles.css" text="Tipo1">
+            <Label fx:id="type1" styleClass="pokemon_item_label" stylesheets="@../styles.css" text="Tipo1">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Label>
-            <Label fx:id="type2" styleClass="pokemon_item_label" stylesheets="@styles.css" text="Tipo2">
+            <Label fx:id="type2" styleClass="pokemon_item_label" stylesheets="@../styles.css" text="Tipo2">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Label>

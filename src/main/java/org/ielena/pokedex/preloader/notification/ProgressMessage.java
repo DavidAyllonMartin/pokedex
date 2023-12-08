@@ -1,4 +1,4 @@
-package org.ielena.pokedex.controller;
+package org.ielena.pokedex.preloader.notification;
 
 import javafx.application.Preloader;
 

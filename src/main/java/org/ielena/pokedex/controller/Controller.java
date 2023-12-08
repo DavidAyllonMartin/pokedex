@@ -1,8 +1,8 @@
 package org.ielena.pokedex.controller;
 
-import org.ielena.pokedex.Mediator;
+import org.ielena.pokedex.model.mediator.Mediator;
 
-public class Controller {
+public abstract class Controller {
     private Mediator mediator;
 
     public Mediator getMediator() {

@@ -17,7 +17,7 @@
    <children>
       <VBox alignment="CENTER_LEFT" prefWidth="320.0" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#click" styleClass="home_button" stylesheets="@styles.css">
+            <Button mnemonicParsing="false" onMouseClicked="#click1" styleClass="home_button" stylesheets="@../styles.css">
                <graphic>
                   <FontAwesomeIconView glyphName="HOME" selectionStart="1" size="20" />
                </graphic>
@@ -79,7 +79,7 @@
                   <Label alignment="CENTER" prefWidth="125.0" text="HP" />
                   <StackPane>
                      <children>
-                        <ProgressBar fx:id="hp_pb" prefWidth="280.0" progress="0.0" stylesheets="@styles.css" />
+                        <ProgressBar fx:id="hp_pb" prefWidth="280.0" progress="0.0" stylesheets="@../styles.css" />
                         <Label fx:id="hp" text="0" />
                      </children>
                   </StackPane>
@@ -93,7 +93,7 @@
                   <Label alignment="CENTER" prefWidth="125.0" text="Attack" />
                   <StackPane>
                      <children>
-                        <ProgressBar fx:id="attack_pb" prefWidth="280.0" progress="0.0" stylesheets="@styles.css" />
+                        <ProgressBar fx:id="attack_pb" prefWidth="280.0" progress="0.0" stylesheets="@../styles.css" />
                         <Label fx:id="attack" text="0" />
                      </children>
                   </StackPane>
@@ -107,7 +107,7 @@
                   <Label alignment="CENTER" prefWidth="125.0" text="Defense" />
                   <StackPane>
                      <children>
-                        <ProgressBar fx:id="defense_pb" prefWidth="280.0" progress="0.0" stylesheets="@styles.css" />
+                        <ProgressBar fx:id="defense_pb" prefWidth="280.0" progress="0.0" stylesheets="@../styles.css" />
                         <Label fx:id="defense" text="0" />
                      </children>
                   </StackPane>
@@ -121,7 +121,7 @@
                   <Label alignment="CENTER" prefWidth="125.0" text="Sp. Attack" />
                   <StackPane>
                      <children>
-                        <ProgressBar fx:id="specialAttack_pb" prefWidth="280.0" progress="0.0" stylesheets="@styles.css" />
+                        <ProgressBar fx:id="specialAttack_pb" prefWidth="280.0" progress="0.0" stylesheets="@../styles.css" />
                         <Label fx:id="specialAttack" text="0" />
                      </children>
                   </StackPane>
@@ -135,7 +135,7 @@
                   <Label alignment="CENTER" prefWidth="125.0" text="Sp. Defense" />
                   <StackPane>
                      <children>
-                        <ProgressBar fx:id="specialDefense_pb" prefWidth="280.0" progress="0.0" stylesheets="@styles.css" />
+                        <ProgressBar fx:id="specialDefense_pb" prefWidth="280.0" progress="0.0" stylesheets="@../styles.css" />
                         <Label fx:id="specialDefense" text="0" />
                      </children>
                   </StackPane>
@@ -149,7 +149,7 @@
                   <Label alignment="CENTER" prefWidth="125.0" text="Speed" />
                   <StackPane>
                      <children>
-                        <ProgressBar fx:id="speed_pb" prefWidth="280.0" progress="0.0" stylesheets="@styles.css" />
+                        <ProgressBar fx:id="speed_pb" prefWidth="280.0" progress="0.0" stylesheets="@../styles.css" />
                         <Label fx:id="speed" text="0" />
                      </children>
                   </StackPane>

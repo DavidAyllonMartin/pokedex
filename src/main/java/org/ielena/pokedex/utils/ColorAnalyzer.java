@@ -1,4 +1,4 @@
-package org.ielena.pokedex.model;
+package org.ielena.pokedex.utils;
 
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -31,7 +31,6 @@ public class ColorAnalyzer {
         double averageGreen = totalGreen / totalAlpha;
         double averageBlue = totalBlue / totalAlpha;
 
-        // Ajustar la ponderación de cada componente en función de su contribución relativa
         double maxComponent = Math.max(Math.max(averageRed, averageGreen), averageBlue);
         double scaleFactor = 0.8 / maxComponent;
 

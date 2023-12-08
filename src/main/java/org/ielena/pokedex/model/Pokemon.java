@@ -1,101 +1,43 @@
 package org.ielena.pokedex.model;
 
 import javafx.scene.image.Image;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Objects;
+public class Pokemon {
 
-/**
- * Clase que representa a un pokemon
- *
- * @author David Ayllón Martín
- * @version 1.0
- * @date 24/04/2023
- */
-public class Pokemon implements Comparable<Pokemon> {
-
-    //Atributos
+    //Attributes
     public static final int MAX_STAT = 255;
     private int id;
-    private String nombre;
-    private String tipo1;
-    private String tipo2;
-    private int altura;
-    private int peso;
-    private int HP;
-    private int ataque;
-    private int defensa;
-    private int ataqueEspecial;
-    private int defensaEspecial;
-    private int velocidad;
-    private Image imagen;
+    private String name;
+    private String type1;
+    private String type2;
+    private int height;
+    private int weight;
+    private int hp;
+    private int attack;
+    private int defense;
+    private int specialAttack;
+    private int specialDefense;
+    private int speed;
+    private Image image;
 
-    //Constructores
-    public Pokemon() {
-        this.id = 0;
-        this.nombre = "";
-        this.tipo1 = "";
-        this.tipo2 = "";
-        this.altura = 0;
-        this.peso = 0;
-        this.HP = 0;
-        this.ataque = 0;
-        this.defensa = 0;
-        this.ataqueEspecial = 0;
-        this.defensaEspecial = 0;
-        this.velocidad = 0;
+    //Constructor
+    public Pokemon(int id, String name, String type1, String type2, int height, int weight, int hp, int attack, int defense, int specialAttack, int specialDefense, int speed, Image image) {
+        setId(id);
+        setName(name);
+        setType1(type1);
+        setType2(type2);
+        setHeight(height);
+        setWeight(weight);
+        setHp(hp);
+        setAttack(attack);
+        setDefense(defense);
+        setSpecialAttack(specialAttack);
+        setSpecialDefense(specialDefense);
+        setSpeed(speed);
+        setImage(image);
     }
 
-    public Pokemon(int id, String nombre) {
-        this.id = id;
-        this.nombre = nombre;
-    }
-
-    public Pokemon(int id, String nombre, String tipo1, String tipo2) {
-        this(id, nombre);
-        this.tipo1 = tipo1;
-        this.tipo2 = tipo2;
-        this.altura = 0;
-        this.peso = 0;
-        this.HP = 0;
-        this.ataque = 0;
-        this.defensa = 0;
-        this.ataqueEspecial = 0;
-        this.defensaEspecial = 0;
-        this.velocidad = 0;
-    }
-
-    public Pokemon(int id, String nombre, String tipo1, String tipo2, int altura, int peso) {
-        this(id, nombre, tipo1, tipo2);
-        this.altura = altura;
-        this.peso = peso;
-    }
-
-    public Pokemon(int id, String nombre, String tipo1, String tipo2, int altura, int peso, int HP, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad) {
-        this(id, nombre, tipo1, tipo2, altura, peso);
-        this.HP = HP;
-        this.ataque = ataque;
-        this.defensa = defensa;
-        this.ataqueEspecial = ataqueEspecial;
-        this.defensaEspecial = defensaEspecial;
-        this.velocidad = velocidad;
-    }
-
-    public Pokemon(int id, String nombre, String tipo1, String tipo2, int altura, int peso, int HP, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, Image imagen) {
-        this(id, nombre, tipo1, tipo2, altura, peso, HP, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad);
-        this.imagen = imagen;
-    }
-
-
-    //Getters y Setters
+    //Getters and Setters
     public int getId() {
         return id;
     }
@@ -104,199 +46,209 @@ public class Pokemon implements Comparable<Pokemon> {
         this.id = id;
     }
 
-    public String getNombre() {
-        return capitalizeFirstLetter(nombre);
+    public String getName() {
+        return this.name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = capitalizeFirstLetter(name);
     }
 
-    public String getTipo1() {
-        return capitalizeFirstLetter(tipo1);
+    public String getType1() {
+        return this.type1;
     }
 
-    public void setTipo1(String tipo1) {
-        this.tipo1 = tipo1;
+    public void setType1(String type1) {
+        this.type1 = capitalizeFirstLetter(type1);
     }
 
-    public String getTipo2() {
-        return capitalizeFirstLetter(tipo2);
+    public String getType2() {
+        return this.type2;
     }
 
-    public void setTipo2(String tipo2) {
-        this.tipo2 = tipo2;
+    public void setType2(String type2) {
+        this.type2 = capitalizeFirstLetter(type2);
     }
 
-    public double getAltura() {
+    public double getHeight() {
         //La altura está almacenada en decímetros
-        return altura / 10.0;
+        return height / 10.0;
     }
 
-    public void setAltura(int altura) {
-        this.altura = altura;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
-    public double getPeso() {
+    public double getWeight() {
         //El peso está almacenado en hectogramos
-        return peso / 10.0;
+        return weight / 10.0;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public int getHP() {
-        return HP;
+    public int getHp() {
+        return hp;
     }
 
-    public void setHP(int HP) {
-        this.HP = HP;
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
-    public int getAtaque() {
-        return ataque;
+    public int getAttack() {
+        return attack;
     }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
+    public void setAttack(int attack) {
+        this.attack = attack;
     }
 
-    public int getDefensa() {
-        return defensa;
+    public int getDefense() {
+        return defense;
     }
 
-    public void setDefensa(int defensa) {
-        this.defensa = defensa;
+    public void setDefense(int defense) {
+        this.defense = defense;
     }
 
-    public int getAtaqueEspecial() {
-        return ataqueEspecial;
+    public int getSpecialAttack() {
+        return specialAttack;
     }
 
-    public void setAtaqueEspecial(int ataqueEspecial) {
-        this.ataqueEspecial = ataqueEspecial;
+    public void setSpecialAttack(int specialAttack) {
+        this.specialAttack = specialAttack;
     }
 
-    public int getDefensaEspecial() {
-        return defensaEspecial;
+    public int getSpecialDefense() {
+        return specialDefense;
     }
 
-    public void setDefensaEspecial(int defensaEspecial) {
-        this.defensaEspecial = defensaEspecial;
+    public void setSpecialDefense(int specialDefense) {
+        this.specialDefense = specialDefense;
     }
 
-    public int getVelocidad() {
-        return velocidad;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setVelocidad(int velocidad) {
-        this.velocidad = velocidad;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
-    public Image getImagen() {
-        return imagen;
+    public Image getImage() {
+        return image;
     }
 
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     private String capitalizeFirstLetter(String s) {
         if (s == null || s.isEmpty()) {
             return s;
         } else {
-            return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
-        }
-    }
+            StringBuilder result = new StringBuilder();
+            boolean capitalizeNext = true;
 
-    public static Pokemon json2Pokemon(Path jsonFile) {
-        StringBuilder textJSON = new StringBuilder();
-        try (BufferedReader br = Files.newBufferedReader(jsonFile)) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                textJSON.append(line);
+            for (char c : s.toCharArray()) {
+                if (Character.isWhitespace(c) || c == '-') {
+                    capitalizeNext = true;
+                    result.append(c);
+                } else if (capitalizeNext) {
+                    result.append(Character.toUpperCase(c));
+                    capitalizeNext = false;
+                } else {
+                    result.append(Character.toLowerCase(c));
+                }
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+
+            return result.toString();
         }
-        JSONTokener parser = new JSONTokener(textJSON.toString());
-        JSONObject pokemonJSON = new JSONObject(parser);
-
-        // Extract Pokemon details
-        int id = pokemonJSON.getInt("id");
-        String nombre = pokemonJSON.getString("name");
-        String[] tipos = new String[2];
-
-        JSONArray types = pokemonJSON.getJSONArray("types");
-        for (int j = 0; j < types.length(); j++) {
-            tipos[j] = types.getJSONObject(j).getJSONObject("type").getString("name");
-        }
-
-        String tipo1 = tipos[0];
-        String tipo2 = tipos[1];
-
-        int altura = pokemonJSON.getInt("height");
-        int peso = pokemonJSON.getInt("weight");
-
-        JSONArray stats = pokemonJSON.getJSONArray("stats");
-        int HP = stats.getJSONObject(0).getInt("base_stat");
-        int ataque = stats.getJSONObject(1).getInt("base_stat");
-        int defensa = stats.getJSONObject(2).getInt("base_stat");
-        int ataqueEspecial = stats.getJSONObject(3).getInt("base_stat");
-        int defensaEspecial = stats.getJSONObject(4).getInt("base_stat");
-        int velocidad = stats.getJSONObject(5).getInt("base_stat");
-
-        String imagenURL = pokemonJSON.getJSONObject("sprites").getJSONObject("other")
-                .getJSONObject("official-artwork").getString("front_default");
-
-        Path imgPath = Paths.get(String.format("src/main/resources/org/ielena/pokedex/img/images/%d.png", id));
-
-        if (!Files.exists(imgPath)) {
-            try {
-                ImageDownloader.descargarImagen(imagenURL, imgPath.toString(), 175, 175);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        Image imagen = new Image(imgPath.toUri().toString());
-
-        return new Pokemon(id, nombre, tipo1, tipo2, altura, peso, HP, ataque, defensa,
-                ataqueEspecial, defensaEspecial, velocidad, imagen);
     }
 
+    public static class Builder {
+        private int id = 0;
+        private String name = "unknown";
+        private String type1 = "unknown";
+        private String type2 = "unknown";
+        private int height = 0;
+        private int weight = 0;
+        private int hp = 0;
+        private int attack = 0;
+        private int defense = 0;
+        private int specialAttack = 0;
+        private int specialDefense = 0;
+        private int speed = 0;
+        private Image image = null;
 
+        public Builder id(int id) {
+            this.id = id;
+            return this;
+        }
 
-    @Override
-    public String toString() {
-        return "Pokemon{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", tipo1='" + tipo1 + '\'' +
-                ", tipo2='" + tipo2 + '\'' +
-                ", altura=" + altura +
-                ", peso=" + peso +
-                ", HP=" + HP +
-                ", ataque=" + ataque +
-                ", defensa=" + defensa +
-                ", ataqueEspecial=" + ataqueEspecial +
-                ", defensaEspecial=" + defensaEspecial +
-                ", velocidad=" + velocidad +
-                '}';
-    }
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pokemon pokemon = (Pokemon) o;
-        return id == pokemon.id && Objects.equals(nombre, pokemon.nombre);
-    }
+        public Builder type1(String type1) {
+            this.type1 = type1;
+            return this;
+        }
 
-    @Override
-    public int compareTo(Pokemon o) {
-        return this.id - o.getId();
+        public Builder type2(String type2) {
+            this.type2 = type2;
+            return this;
+        }
+
+        public Builder height(int height) {
+            this.height = height;
+            return this;
+        }
+
+        public Builder weight(int weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public Builder hp(int hp) {
+            this.hp = hp;
+            return this;
+        }
+
+        public Builder attack(int attack) {
+            this.attack = attack;
+            return this;
+        }
+
+        public Builder defense(int defense) {
+            this.defense = defense;
+            return this;
+        }
+
+        public Builder specialAttack(int specialAttack) {
+            this.specialAttack = specialAttack;
+            return this;
+        }
+
+        public Builder specialDefense(int specialDefense) {
+            this.specialDefense = specialDefense;
+            return this;
+        }
+
+        public Builder speed(int speed) {
+            this.speed = speed;
+            return this;
+        }
+
+        public Builder image(Image image) {
+            this.image = image;
+            return this;
+        }
+
+        public Pokemon build() {
+            return new Pokemon(id, name, type1, type2, height, weight, hp, attack, defense, specialAttack, specialDefense, speed, image);
+        }
     }
 }
-
-
