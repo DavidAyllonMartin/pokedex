@@ -6,11 +6,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import org.ielena.pokedex.Callback;
 import org.ielena.pokedex.model.ColorAnalyzer;
 import org.ielena.pokedex.model.Pokemon;
 
-public class PokemonItemController {
+public class PokemonItemController extends Controller{
+    private Pokemon pokemon;
 
     @FXML private Label name;
     @FXML private Label id;
@@ -18,13 +18,17 @@ public class PokemonItemController {
     @FXML private Label type2;
     @FXML private ImageView image;
     @FXML private HBox pokemonCard;
-    @FXML private void click(MouseEvent mouseEvent){callback.onClick(pokemon);}
-    private Pokemon pokemon;
-    private Callback callback;
+    @FXML private void click(MouseEvent mouseEvent){getMediator().notify(this);}
+    public Pokemon getPokemon() {
+        return pokemon;
+    }
 
-    public void setData(Pokemon pokemon, Callback callback){
+    public void setPokemon(Pokemon pokemon) {
         this.pokemon = pokemon;
-        this.callback = callback;
+    }
+
+    public void setData(Pokemon pokemon){
+        this.pokemon = pokemon;
 
         id.setText(String.format("#%03d", pokemon.getId()));
         name.setText(pokemon.getNombre());

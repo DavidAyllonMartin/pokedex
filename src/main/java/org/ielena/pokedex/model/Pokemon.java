@@ -1,7 +1,16 @@
 package org.ielena.pokedex.model;
 
 import javafx.scene.image.Image;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 /**
@@ -14,6 +23,7 @@ import java.util.Objects;
 public class Pokemon implements Comparable<Pokemon> {
 
     //Atributos
+    public static final int MAX_STAT = 255;
     private int id;
     private String nombre;
     private String tipo1;
@@ -26,7 +36,6 @@ public class Pokemon implements Comparable<Pokemon> {
     private int ataqueEspecial;
     private int defensaEspecial;
     private int velocidad;
-    private Image sprite;
     private Image imagen;
 
     //Constructores
@@ -80,10 +89,9 @@ public class Pokemon implements Comparable<Pokemon> {
         this.velocidad = velocidad;
     }
 
-    public Pokemon(int id, String nombre, String tipo1, String tipo2, int altura, int peso, int HP, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, Image imagen, Image sprite) {
+    public Pokemon(int id, String nombre, String tipo1, String tipo2, int altura, int peso, int HP, int ataque, int defensa, int ataqueEspecial, int defensaEspecial, int velocidad, Image imagen) {
         this(id, nombre, tipo1, tipo2, altura, peso, HP, ataque, defensa, ataqueEspecial, defensaEspecial, velocidad);
         this.imagen = imagen;
-        this.sprite = sprite;
     }
 
 
@@ -97,7 +105,7 @@ public class Pokemon implements Comparable<Pokemon> {
     }
 
     public String getNombre() {
-        return nombre;
+        return capitalizeFirstLetter(nombre);
     }
 
     public void setNombre(String nombre) {
@@ -105,7 +113,7 @@ public class Pokemon implements Comparable<Pokemon> {
     }
 
     public String getTipo1() {
-        return tipo1;
+        return capitalizeFirstLetter(tipo1);
     }
 
     public void setTipo1(String tipo1) {
@@ -113,23 +121,25 @@ public class Pokemon implements Comparable<Pokemon> {
     }
 
     public String getTipo2() {
-        return tipo2;
+        return capitalizeFirstLetter(tipo2);
     }
 
     public void setTipo2(String tipo2) {
         this.tipo2 = tipo2;
     }
 
-    public int getAltura() {
-        return altura;
+    public double getAltura() {
+        //La altura está almacenada en decímetros
+        return altura / 10.0;
     }
 
     public void setAltura(int altura) {
         this.altura = altura;
     }
 
-    public int getPeso() {
-        return peso;
+    public double getPeso() {
+        //El peso está almacenado en hectogramos
+        return peso / 10.0;
     }
 
     public void setPeso(int peso) {
@@ -184,14 +194,6 @@ public class Pokemon implements Comparable<Pokemon> {
         this.velocidad = velocidad;
     }
 
-    public Image getSprite() {
-        return sprite;
-    }
-
-    public void setSprite(Image sprite) {
-        this.sprite = sprite;
-    }
-
     public Image getImagen() {
         return imagen;
     }
@@ -199,6 +201,70 @@ public class Pokemon implements Comparable<Pokemon> {
     public void setImagen(Image imagen) {
         this.imagen = imagen;
     }
+
+    private String capitalizeFirstLetter(String s) {
+        if (s == null || s.isEmpty()) {
+            return s;
+        } else {
+            return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+        }
+    }
+
+    public static Pokemon json2Pokemon(Path jsonFile) {
+        StringBuilder textJSON = new StringBuilder();
+        try (BufferedReader br = Files.newBufferedReader(jsonFile)) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                textJSON.append(line);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        JSONTokener parser = new JSONTokener(textJSON.toString());
+        JSONObject pokemonJSON = new JSONObject(parser);
+
+        // Extract Pokemon details
+        int id = pokemonJSON.getInt("id");
+        String nombre = pokemonJSON.getString("name");
+        String[] tipos = new String[2];
+
+        JSONArray types = pokemonJSON.getJSONArray("types");
+        for (int j = 0; j < types.length(); j++) {
+            tipos[j] = types.getJSONObject(j).getJSONObject("type").getString("name");
+        }
+
+        String tipo1 = tipos[0];
+        String tipo2 = tipos[1];
+
+        int altura = pokemonJSON.getInt("height");
+        int peso = pokemonJSON.getInt("weight");
+
+        JSONArray stats = pokemonJSON.getJSONArray("stats");
+        int HP = stats.getJSONObject(0).getInt("base_stat");
+        int ataque = stats.getJSONObject(1).getInt("base_stat");
+        int defensa = stats.getJSONObject(2).getInt("base_stat");
+        int ataqueEspecial = stats.getJSONObject(3).getInt("base_stat");
+        int defensaEspecial = stats.getJSONObject(4).getInt("base_stat");
+        int velocidad = stats.getJSONObject(5).getInt("base_stat");
+
+        String imagenURL = pokemonJSON.getJSONObject("sprites").getJSONObject("other")
+                .getJSONObject("official-artwork").getString("front_default");
+
+        Path imgPath = Paths.get(String.format("src/main/resources/org/ielena/pokedex/img/images/%d.png", id));
+
+        if (!Files.exists(imgPath)) {
+            try {
+                ImageDownloader.descargarImagen(imagenURL, imgPath.toString(), 175, 175);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        Image imagen = new Image(imgPath.toUri().toString());
+
+        return new Pokemon(id, nombre, tipo1, tipo2, altura, peso, HP, ataque, defensa,
+                ataqueEspecial, defensaEspecial, velocidad, imagen);
+    }
+
 
 
     @Override
